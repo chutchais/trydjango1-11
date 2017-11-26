@@ -1,0 +1,8 @@
+ps -ef | grep python
+
+kill -9 process_id
+
+
+
+
+6:33:31 -- Following User.

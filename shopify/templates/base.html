@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html lang=en>
+<header>
+	<title>{% block head_title %}Shopify{% endblock head_title %}</title>
+	{% include 'snippets/css.html' %}
+</header>
+<body>
+
+ {% include 'snippets/nav.html' %}
+<div class='container'>
+	{% block content %}
+	{% endblock content %}
+</div>
+
+</body>
+{% include 'snippets/js.html' %}
+</html>
