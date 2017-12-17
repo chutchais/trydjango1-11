@@ -17,13 +17,16 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from django.contrib.auth.views import LoginView
-from profiles.views import ProfileFollowToggle
+from django.contrib.auth.views import LoginView,LogoutView
+from profiles.views import activate_user_view,ProfileFollowToggle,RegisterView
 from menus.views import HomeView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^register/', RegisterView.as_view(),name='register'),
     url(r'^login/', LoginView.as_view(),name='login'),
+    url(r'^logout/', LogoutView.as_view(),name='logout'),
+    url(r'^activate/(?P<code>[a-z0-9].*)/$', activate_user_view,name='activate'),
     # url(r'^$', TemplateView.as_view(template_name='home.html'),name='home'),
     url(r'^$', HomeView.as_view(),name='home'),
     url(r'^profile-follow/$', ProfileFollowToggle.as_view(),name='follow'),

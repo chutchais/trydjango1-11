@@ -27,6 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_HOST_USER ='chutchai.s@gmail.com'
+EMAIL_HOST_PASSWORD ='pimai285150'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Chutchai Suebklang <chutchai.s@gmail.com>'
+
+ADMINS = (
+    ('You','you@email.com'),
+)
+MANAGERS = ADMINS
 
 # Application definition
 
@@ -54,6 +65,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'shopify.urls'
 LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
